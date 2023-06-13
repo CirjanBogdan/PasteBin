@@ -1,0 +1,11 @@
+﻿@page "{id:int}"
+@model DetailsModel
+
+@if (Model.TextFragment != null)
+{
+    <p>@Model.TextFragment.Text</p>
+} else
+{
+    <p>Text Not Found</p>
+}
+

@@ -1,0 +1,24 @@
+﻿@page 
+@model IndexModel
+@{
+    ViewData["Title"] = "PasteBin";
+}
+
+<form method="post">
+    <div>
+        <textarea asp-for="NewText" rows="5" cols="50"></textarea>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+
+@if (Model.TextList != null)
+{
+    <ul>
+        @foreach (var text in Model.TextList)
+        {
+            <li> <a href="/Details/@text.Id"/> @text.PreviewText </li>
+        }
+    </ul>
+}
